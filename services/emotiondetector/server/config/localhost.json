@@ -1,0 +1,8 @@
+{
+     "debug": "true",
+     "port": "9000",
+     "ssl": {
+		"key": "/etc/nginx/ssl/emotiondetector.emotihue.localhost.key",
+		"cert": "/etc/nginx/ssl/emotiondetector.emotihue.localhost.crt"
+	}
+}

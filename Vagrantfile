@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
      config.vm.network "forwarded_port", guest: 80, host: 8080 #admin UI (redirects to ssl)
      config.vm.network "forwarded_port", guest: 443, host: 8443 #admin UI
      config.vm.network "forwarded_port", guest: 9000, host: 9000 #emotiondetector
-     config.vm.network "forwarded_port", guest: 9001, host: 9001 #hue
+     config.vm.network "forwarded_port", guest: 9001, host: 9001 #light
 
      # install software
      config.vm.provision "shell" do |shell|
