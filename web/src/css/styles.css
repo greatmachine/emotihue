@@ -1,0 +1,88 @@
+body{
+     font-family: 'PT Sans Narrow', sans-serif;
+}
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10;
+}
+
+#faceBox{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 20;
+}
+
+canvas, img{
+     border: 0;
+}
+
+#hidden{
+     position: absolute;
+     z-index: -100;
+}
+
+.wrapper{
+     background-color: #fff;
+     padding: 15px;
+     margin: 15px;
+}
+
+.wrapper h2{
+     margin: 0;
+     margin-bottom: 5px;
+}
+
+#output{
+     position: absolute;
+     top: 15px;
+     left: 15px;
+     padding: 20px;
+     background-color: blue;
+     z-index: 100;
+}
+
+#output h1{
+     font-size: 45px;
+     margin: 0;
+     padding: 0;
+     text-transform: uppercase;
+}
+
+
+#output.face-detected{
+     background-color: #fff;
+     color: #000;
+}
+
+#output.face-detected .face{ display: block; }
+#output.face-detected .no-face{ display: none; }
+
+#output.no-face-detected{
+     background-color: #000;
+     color: #fff;
+}
+
+#output.no-face-detected .face{ display: none; }
+#output.no-face-detected .no-face{ display: block; }

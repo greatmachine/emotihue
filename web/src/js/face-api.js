@@ -1151,7 +1151,6 @@
     }
 
     function drawDetection(canvasArg, detection, options) {
-console.log(detection);
         var Canvas = env.getEnv().Canvas;
         var canvas = resolveInput(canvasArg);
         if (!(canvas instanceof Canvas)) {

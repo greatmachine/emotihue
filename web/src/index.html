@@ -2,14 +2,51 @@
 <html>
      <head>
           <title>Emotihue</title>
+          <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet"/>
+          <link rel="stylesheet" type="text/css" href="/css/styles.css" />
      </head>
      <body>
 
-<video onplay="onPlay(this)" id="inputVideo" autoplay muted  width="640" height="480" style=" border: 1px solid #ddd;"></video><br>
-<canvas id="overlay" width="640" height="480" style="position:relative; top:-487px; border: 1px solid #ddd;" ></canvas><br>
+          <!-- output -->
+          <div id="output" class="no-face-detected">
+               <div class="face">
+                    <h1 class="emotion">-</h1>
+                    <h1 class="confidence">-</h1>
+               </div>
+               <div class="no-face">
+                    <h1>No face detected.</h1>
+               </div>
+          </div>
+          <!-- /output -->
+
+          <!-- fullscreen video from webcam -->
+          <video id="inputVideo" autoplay muted></video>
+          <canvas id="faceBox"></canvas>
+          <!-- /fullscreen video from webcam -->
+
+          <!-- behind the scenes -->
+          <div id="hidden">
+               <!-- canvas version -->
+               <div class="wrapper">
+                    <h2>Canvas</h2>
+                    <canvas id="theVideoCanvas" width="640" height="480"></canvas>
+               </div>
+               <!-- /canvas version -->
+               <!-- image version -->
+               <div class="wrapper">
+                    <h2>Image (PNG)</h2>
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" id="theImage" width="640" height="480"/>
+               </div>
+               <!-- /image version -->
+          </div>
+          <!-- /behind the scenes -->
 
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-          <script language="javascript" type="text/javascript" src="/js/face-api.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/async/2.6.1/async.min.js"></script>
+          <script src="https://sdk.amazonaws.com/js/aws-sdk-2.395.0.min.js"></script>
+          <script language="javascript" type="text/javascript" src="/js/face-api.js"></script>
+          <script language="javascript" type="text/javascript" src="/js/HueManager.js"></script>
           <script language="javascript" type="text/javascript" src="/js/EmotihueManager.js"></script>
           <script language="javascript" type="text/javascript" src="/js/scripts.js"></script>
 
