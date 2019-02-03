@@ -9,8 +9,6 @@ var videoCanvasContext = videoCanvas.getContext('2d');
 
 //AWS creds
 AWS.config.region = "us-east-1";
-AWS.config.accessKeyId = "AKIAIXN3BSOWXYJHDDRQ";
-AWS.config.secretAccessKey = "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";
 
 //init hue manager
 var hm = new HueManager();
@@ -173,7 +171,7 @@ var _getEmotion = function(imageData, callback){
      var rekognition = new AWS.Rekognition();
      rekognition.detectFaces(params, function(err, data){
           if(err){
-               console.log(`AWS Rekognition error: {$err}`);
+               console.log(`AWS Rekognition error: ${err}`);
                return(callback(err));
           }
           //assuming we have results, get the highest confidence emotion.
